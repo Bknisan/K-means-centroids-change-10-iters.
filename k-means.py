@@ -56,7 +56,7 @@ def initialize_avg(number_of_centroids):
 
 
 # data preperation (loading, normalizing, reshaping)
-path = 'dog.jpeg'
+path = 'enterYourPhotoName.jpeg'
 A = imread(path)
 A = A.astype(float) / 255.
 img_size = A.shape
@@ -73,9 +73,10 @@ while centroids_number < 32:
         for j in X:
             avg = closest_distance(j, centroids, avg)
         for k in range(0, centroids_number):
-            avg[k][0] = avg[k][0] / avg[k][3]
-            avg[k][1] = avg[k][1] / avg[k][3]
-            avg[k][2] = avg[k][2] / avg[k][3]
+            if(avg[k][3] != 0):
+                avg[k][0] = avg[k][0] / avg[k][3]
+                avg[k][1] = avg[k][1] / avg[k][3]
+                avg[k][2] = avg[k][2] / avg[k][3]
             centroids[k][0] = avg[k][0]
             centroids[k][1] = avg[k][1]
             centroids[k][2] = avg[k][2]
