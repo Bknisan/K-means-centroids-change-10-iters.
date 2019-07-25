@@ -18,3 +18,5 @@ scipy
      **iter Y: [value, value, value] .......**
      
 you can use pandas and matplot in order to show your new modified images based on the number of centroids and their initial position.
+
+3 images examples provided.
